@@ -20,7 +20,7 @@ import botnikkk
 botnikkk.centre('text')
 ```
 
-It also takes 2 extra parameters as input :
+It also takes 3 extra parameters as input :
 
 1. symbol : determines what symbol will fill in the blank space, deault parameter = " "
 
@@ -37,7 +37,7 @@ botnikkk.centre('text', left_alignment=23)
 3. str_end : determines what symbol will print as end= in print statement, deault parameter = "\n"
 
 ```python
-botnikkk.centre('text',str_end='\r')
+botnikkk.centre('text',str_end='end')
 ```
 #### OUTPUT EXAMPLE :
 

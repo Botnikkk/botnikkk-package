@@ -1,7 +1,7 @@
 import screeninfo
 import asyncio
 
-def get_alignments(string= " ", format= "all-left"):
+def get_alignments(string= " ", format="auto"):
     screen_width = int((screeninfo.get_monitors()[0].width)/(9.2))
 
     if screen_width < 128 :
@@ -11,16 +11,8 @@ def get_alignments(string= " ", format= "all-left"):
         right_gap = gap - left_gap - len(string)
 
     else :
-        if format == "all-left" :
-            gap = 128
-            left_align = 0
-            left_gap = (int(gap/2) - int(len(string)/2))
-            right_gap = gap - left_gap - len(string)
 
-        elif format == "all-right" :
-            left_align = left_gap = right_gap = gap = None
-
-        elif format == "auto" :
+        if format == "auto" :
             gap = 128
             left_align = (int(screen_width/2) - int(gap/2))
             left_gap = (int(gap/2) - int(len(string)/2))
@@ -37,7 +29,7 @@ def get_alignments(string= " ", format= "all-left"):
             left_align = left_gap = right_gap = gap = None
     return {"left_align" : left_align, "left_gap" : left_gap, "right_gap" : right_gap, "default_gap" : gap }
     
-def centre(title='',symbol=" ",format="all-left", str_end="\n") :
+def centre(title='',symbol=" ",format="auto", str_end="\n") :
     #aligns the title in centre with symbols around it
     alignments = get_alignments(string=title, format=format)
 
