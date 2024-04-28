@@ -2,3 +2,5 @@ dist
 setup.py
 botnikkk.egg-info
 build
+COMMANDS.txt
+API token.txt
